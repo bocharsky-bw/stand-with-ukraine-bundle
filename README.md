@@ -63,7 +63,7 @@ stand_with_ukraine:
     access:
         block_language: true
         block_country: true
+        message_as_link: true # Defaults to "true"
+        censorship: true # Defaults to "true"
         polite: true
-        censorship: true
-        
 ```

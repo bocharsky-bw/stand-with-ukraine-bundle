@@ -6,6 +6,10 @@
                 <source>stand_with_ukraine</source>
                 <target><![CDATA[{brandName} <span class="hidden-xs">выступает солидарным</span> с народом Украины]]></target>
             </trans-unit>
+            <trans-unit id="2">
+                <source>stand_with_ukraine.access_denied</source>
+                <target><![CDATA[Русский военный корабль, иди н{censoredChar}хуй! © 🇺🇦]]></target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
