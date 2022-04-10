@@ -37,11 +37,6 @@ class BlockCountrySubscriber implements EventSubscriberInterface
             return;
         }
 
-        $preferredLanguage = $request->getPreferredLanguage();
-        if (1 !== preg_match('/en/i', $preferredLanguage)) {
-            return;
-        }
-
         if (!$this->isRequestFromForbiddenCountry($request)) {
             return;
         }

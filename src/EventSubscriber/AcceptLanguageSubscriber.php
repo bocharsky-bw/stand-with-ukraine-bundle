@@ -37,7 +37,7 @@ class AcceptLanguageSubscriber implements EventSubscriberInterface
             return;
         }
 
-        if (!$this->isForbiddenLanguage($request)) {
+        if (!$this->isPreferredLanguageForbidden($request)) {
             return;
         }
 
@@ -58,7 +58,7 @@ class AcceptLanguageSubscriber implements EventSubscriberInterface
         ];
     }
 
-    private function isForbiddenLanguage(Request $request): bool
+    private function isPreferredLanguageForbidden(Request $request): bool
     {
         $preferredLanguage = $request->getPreferredLanguage();
 
