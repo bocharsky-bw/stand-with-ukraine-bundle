@@ -1,0 +1,27 @@
+{
+    "name": "bw/stand-with-ukraine-bundle",
+    "description": "Shows StandWithUkraine banner and blocks content for Russian-speaking users",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "BW\\StandWithUkraineBundle\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Victor Bocharsky",
+            "email": "bocharsky.bw@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/framework-bundle": "^5.4|^6.0",
+        "twig/twig": "^3.3"
+    },
+    "require-dev": {
+        "symfony/phpunit-bridge": "^5.4|^6.0"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

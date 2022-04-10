@@ -1,0 +1,19 @@
+{% if targetUrl %}
+    <a href="{{ targetUrl }}" style="display: block; color: white;">
+{% endif %}
+    <div style="padding: 15px; background-color: black; color: white;">
+        <div style="display: table; margin: 0 auto;">
+            <div style="display: table-cell; text-align: right; vertical-align: middle;">
+                <svg style="display: flex; height: 30px; margin-right: 10px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+                    <rect width="1200" height="800" fill="#005BBB"></rect>
+                    <rect width="1200" height="400" y="400" fill="#FFD500"></rect>
+                </svg>
+            </div>
+            <div style="display: table-cell; text-align: left; vertical-align: middle;">
+                {{ brandName|default(httpHost) }} stands <span class="hidden-xs">united</span> with <span class="hidden-xs">the people of</span> Ukraine
+            </div>
+        </div>
+    </div>
+{% if targetUrl %}
+    </a>
+{% endif %}
