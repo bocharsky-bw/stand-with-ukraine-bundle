@@ -10,7 +10,9 @@
                 </svg>
             </div>
             <div style="display: table-cell; text-align: left; vertical-align: middle;">
-                {{ brandName|default(httpHost) }} stands <span class="hidden-xs">united</span> with <span class="hidden-xs">the people of</span> Ukraine
+                {{ 'stand_with_ukraine'|trans({
+                    'brandName': brandName|default(httpHost)
+                }, 'StandWithUkraineBundle')|raw }}
             </div>
         </div>
     </div>

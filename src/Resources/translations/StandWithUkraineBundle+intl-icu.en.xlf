@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file original="file.ext" source-language="en" target-language="en" datatype="plaintext">
+        <body>
+            <trans-unit id="1">
+                <source>stand_with_ukraine</source>
+                <target><![CDATA[{brandName} stands <span class="hidden-xs">united</span> with <span class="hidden-xs">the people of</span> Ukraine]]></target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

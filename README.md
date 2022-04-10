@@ -46,6 +46,8 @@ And activate the event subscriber:
 # config/services.yaml
 
 services:
+    # ...
+    BW\StandWithUkraineBundle\EventSubscriber\BannerSubscriber: ~
     BW\StandWithUkraineBundle\EventSubscriber\AcceptLanguageSubscriber: ~
 ```
 
