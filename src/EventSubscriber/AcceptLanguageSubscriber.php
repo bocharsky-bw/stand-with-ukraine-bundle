@@ -6,17 +6,20 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
+use Symfony\Contracts\Translation\TranslatorInterface;
 use Twig\Environment;
 
 class AcceptLanguageSubscriber implements EventSubscriberInterface
 {
-    private const COUNTRY_CODE_RUSSIA = 'RU';
+    private const PREFERRED_LANG_RU = 'ru';
 
     private Environment $twig;
+    private TranslatorInterface $translator;
 
-    public function __construct(Environment $twig)
+    public function __construct(Environment $twig, TranslatorInterface $translator)
     {
         $this->twig = $twig;
+        $this->translator = $translator;
     }
 
     /**
@@ -34,31 +37,41 @@ class AcceptLanguageSubscriber implements EventSubscriberInterface
             return;
         }
 
-        $preferredLanguage = $request->getPreferredLanguage();
-        if (1 !== preg_match('/en/i', $preferredLanguage)) {
-            return;
-        }
-
-        $shouldAlsoCheckForCountry = false;
-        if ($shouldAlsoCheckForCountry && !$this->isRequestFromRussia($request)) {
+        if (!$this->isForbiddenLanguage($request)) {
             return;
         }
 
         $browser = $this->determineBrowser($request);
         $content = $this->twig->render('@StandWithUkraine/page.html.twig', [
             'browser' => $browser,
-            'messageAsLink' => false,
-            'censoredChar' => self::generateRandomCensoredChar(),
+            'messageAsLink' => true,
         ]);
         $response = new Response($content, Response::HTTP_NOT_ACCEPTABLE);
         $event->setResponse($response);
     }
 
-    public static function getSubscribedEvents()
+    public static function getSubscribedEvents(): array
     {
         return [
-            RequestEvent::class => ['onRequestEvent', 14],
+            // priority should be lower than for BlockCountrySubscriber
+            RequestEvent::class => ['onRequestEvent', 13],
         ];
+    }
+
+    private function isForbiddenLanguage(Request $request): bool
+    {
+        $preferredLanguage = $request->getPreferredLanguage();
+
+        $overwrittenPreferredLang = $request->query->get('swu_preferred_lang', false);
+        if ($overwrittenPreferredLang) {
+            $preferredLanguage = $overwrittenPreferredLang;
+        }
+
+        if (1 !== preg_match('/'.self::PREFERRED_LANG_RU.'/i', $preferredLanguage)) {
+            return false;
+        }
+
+        return true;
     }
 
     private function determineBrowser(Request $request): ?string
@@ -77,22 +90,9 @@ class AcceptLanguageSubscriber implements EventSubscriberInterface
         return null;
     }
 
-    private function isRequestFromRussia(Request $request): bool
+    private function applyCensorship($text): string
     {
-        $userIp = $request->server->get('REMOTE_ADDR');
-        if (!$userIp) {
-            return false;
-        }
 
-        $jsonContent = file_get_contents('http://www.geoplugin.net/json.gp?ip='.$ip);
-        // TODO Try/catch the exception to silent it
-        $data = json_decode($jsonContent, true, 512, JSON_THROW_ON_ERROR);
-
-        if (self::COUNTRY_CODE_RUSSIA !== $data['geoplugin_countryCode']) {
-            return false;
-        }
-
-        return true;
     }
 
     private static function generateRandomCensoredChar(): string

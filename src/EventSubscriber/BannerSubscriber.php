@@ -64,7 +64,7 @@ class BannerSubscriber implements EventSubscriberInterface
         $response->setContent($content);
     }
 
-    public static function getSubscribedEvents()
+    public static function getSubscribedEvents(): array
     {
         return [
             ResponseEvent::class => ['onResponseEvent'],

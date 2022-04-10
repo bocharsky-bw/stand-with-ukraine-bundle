@@ -1,24 +1,27 @@
 <!doctype html>
-<html lang="en" style="height: 100%;">
+<html lang="{{ app.request.locale }}" style="height: 100%;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Access denied</title>
+    <title>Russian language is not accepted</title>
 </head>
 <body style="height: 100%; margin: 0;">
     <div style="display: table; width: 100%; height: 100%;">
         <div style="display: table-cell; text-align: center; vertical-align: middle; color: red;">
-            {% if messageAsLink %}
-                <a href="https://en.wikipedia.org/wiki/Russian_warship,_go_fuck_yourself" target="_blank" style="color: red;" rel="nofollow">
-            {% endif %}
-                {{ 'stand_with_ukraine.access_denied'|trans({
-                    'censoredChar': censoredChar
-                }, 'StandWithUkraineBundle') }}
-            {% if messageAsLink %}
-                </a>
-            {% endif %}
+            <div style="display: inline-block;">
+                {% if messageAsLink %}
+                    <a href="https://en.wikipedia.org/wiki/Russian_warship,_go_fuck_yourself" target="_blank" style="color: red;" rel="nofollow">
+                {% endif %}
+                    {{ 'stand_with_ukraine.access_denied'|trans({}, 'StandWithUkraineBundle') }}
+                {% if messageAsLink %}
+                    </a>
+                {% endif %}
+                <div style="text-align: right;" rel="nofollow">
+                    <a href="" style="color: black;">Why?</a>
+                </div>
+            </div>
         </div>
     </div>
 </body>

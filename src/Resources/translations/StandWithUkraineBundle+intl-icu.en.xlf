@@ -8,7 +8,7 @@
             </trans-unit>
             <trans-unit id="2">
                 <source>stand_with_ukraine.access_denied</source>
-                <target><![CDATA[Russian warship, go f{censoredChar}ck yourself! © 🇺🇦]]></target>
+                <target><![CDATA[Russian warship, go f<span data="censorship">u</span>ck yourself! © 🇺🇦]]></target>
             </trans-unit>
         </body>
     </file>
