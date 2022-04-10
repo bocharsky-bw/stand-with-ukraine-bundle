@@ -2,24 +2,31 @@
 
 На русском? Смотри [README.ru.md](README.ru.md)
 
-This bundle help to block content for Russian-speaking users. Why? Good question!
-First of all, because almost all Russian media are nit independent anymore and
-spread *fake* news to their users about what is happening in the world and even
-in their own country.
+*This bundle helps to block content for Russian-speaking users.* **Why?** Good question!
+First of all, because almost all Russian media are not independent anymore and spread
+*fake* news to their users about what is happening in the world and even in their own country.
 
 The initial idea of this bundle is to push Russian-speaking people to *think*!
-Everybody has a choice. You can choose different sources in different languages
-to know the news from many other independent media around the world, don't limit
+Everybody has a *choice*. You can choose different sources in different languages
+to read the news from many other independent media around the world, don't limit
 yourself with Russian language and Russian media only.
 
 ## Features
-- Show "StandWithUkraine" banner to show that your website stands united with the people
+
+Some features this bundle could help you with:
+
+- **Display "StandWithUkraine" banner** to show that your website stands united with the people
   of Ukraine.
-- Block content for users who have the main language in `Accept-Language` request header
-  set to `ru`. Basically, all people who read most of the content in Russian language.
-- Block content for users who are trying to get access from Russian IP addresses, i.e.
-  accessing the content from Russia. Yes, they still may access content connecting via
-  a VPN app, but at least it makes things less convenient.
+- **Block content** for users who have the **preferred language** in `Accept-Language` request
+  header set to `ru`. Basically, affects people who read most of the content in Russian language.
+  Users would be able to access the content only after changing their preferred language to
+  any other language.
+- **Block content** for users who are trying to **get access from Russian IP addresses**, i.e.
+  accessing the content from Russia. Users would be able to access the content only after
+  connecting via a [VPN](https://en.wikipedia.org/wiki/Virtual_private_network) client
+  choosing a location different from Russia region there. It makes things less convenient
+  probably, but if you're using a good VPN client - you get better security, especially if
+  you're connecting from public Wi-Fi spots or do not trust your internet provider.
 
 ## Installation
 
@@ -49,9 +56,18 @@ services:
     # ...
     BW\StandWithUkraineBundle\EventSubscriber\BannerSubscriber: ~
     BW\StandWithUkraineBundle\EventSubscriber\AcceptLanguageSubscriber: ~
+    BW\StandWithUkraineBundle\EventSubscriber\BlockCountrySubscriber: ~
 ```
 
+## Usage
+
+For testing purposes, you can easily simulate some request data to test things manually in
+an easy way. To overwrite country code, use `swu_country_code` query parameter, e.g:
+https://127.0.0.1:8000/?swu_country_code=ru . Also, you can overwrite preferred language
+as well, use `swu_preferred_lang` query parameter, e.g: https://127.0.0.1:8000/?swu_preferred_lang=ru .
+
 ## Configuration
+
 ```yaml
 stand_with_ukraine:
     banner:
