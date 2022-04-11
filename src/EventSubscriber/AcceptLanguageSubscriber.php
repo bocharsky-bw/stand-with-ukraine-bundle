@@ -45,6 +45,9 @@ class AcceptLanguageSubscriber implements EventSubscriberInterface
         $content = $this->twig->render('@StandWithUkraine/page.html.twig', [
             'browser' => $browser,
             'messageAsLink' => true,
+            'applyCensorship' => function (string $text) {
+                dd($text);
+            }
         ]);
         $response = new Response($content, Response::HTTP_NOT_ACCEPTABLE);
         $event->setResponse($response);
@@ -88,26 +91,5 @@ class AcceptLanguageSubscriber implements EventSubscriberInterface
         }
 
         return null;
-    }
-
-    private function applyCensorship($text): string
-    {
-
-    }
-
-    private static function generateRandomCensoredChar(): string
-    {
-        $chars = [
-            '@',
-            '#',
-            '$',
-            '%',
-            '&',
-            '*',
-        ];
-
-        $randomIndex = array_rand($chars);
-
-        return $chars[$randomIndex];
     }
 }

@@ -57,6 +57,8 @@ services:
     BW\StandWithUkraineBundle\EventSubscriber\BannerSubscriber: ~
     BW\StandWithUkraineBundle\EventSubscriber\AcceptLanguageSubscriber: ~
     BW\StandWithUkraineBundle\EventSubscriber\BlockCountrySubscriber: ~
+    BW\StandWithUkraineBundle\Twig\AppExtension: ~
+    BW\StandWithUkraineBundle\Twig\AppRuntime: ~
 ```
 
 ## Usage

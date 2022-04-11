@@ -14,7 +14,7 @@
                 {% if messageAsLink %}
                     <a href="https://en.wikipedia.org/wiki/Russian_warship,_go_fuck_yourself" target="_blank" style="color: red;" rel="nofollow">
                 {% endif %}
-                    {{ 'stand_with_ukraine.access_denied'|trans({}, 'StandWithUkraineBundle') }}
+                    {{ 'stand_with_ukraine.access_denied'|trans({}, 'StandWithUkraineBundle')|censor }}
                 {% if messageAsLink %}
                     </a>
                 {% endif %}
