@@ -13,11 +13,13 @@ class BlockCountrySubscriber implements EventSubscriberInterface
 {
     private const COUNTRY_CODE_RU = 'RU';
 
+    private BannerSubscriber $bannerSubscriber;
     private Environment $twig;
     private TranslatorInterface $translator;
 
-    public function __construct(Environment $twig, TranslatorInterface $translator)
+    public function __construct(BannerSubscriber $bannerSubscriber, Environment $twig, TranslatorInterface $translator)
     {
+        $this->bannerSubscriber = $bannerSubscriber;
         $this->twig = $twig;
         $this->translator = $translator;
     }
@@ -46,6 +48,8 @@ class BlockCountrySubscriber implements EventSubscriberInterface
         ]);
         $response = new Response($content, Response::HTTP_FORBIDDEN);
         $event->setResponse($response);
+
+        $this->bannerSubscriber->disable();
     }
 
     public static function getSubscribedEvents(): array

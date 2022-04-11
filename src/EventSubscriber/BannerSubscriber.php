@@ -11,6 +11,8 @@ use Twig\Environment;
 
 class BannerSubscriber implements EventSubscriberInterface
 {
+    private bool $isDisabled = false;
+
     private Environment $twig;
 
     public function __construct(Environment $twig)
@@ -23,6 +25,11 @@ class BannerSubscriber implements EventSubscriberInterface
      */
     public function onResponseEvent(ResponseEvent $event)
     {
+        // Make sure other listeners have not disabled it
+        if ($this->isDisabled) {
+            return;
+        }
+
         if (!$event->isMainRequest()) {
             return;
         }
@@ -74,5 +81,10 @@ class BannerSubscriber implements EventSubscriberInterface
         return [
             ResponseEvent::class => ['onResponseEvent'],
         ];
+    }
+
+    public function disable(): void
+    {
+        $this->isDisabled = true;
     }
 }
