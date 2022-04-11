@@ -28,6 +28,11 @@ class BannerSubscriber implements EventSubscriberInterface
         }
 
         $request = $event->getRequest();
+        // Skip AJAX requests
+        if ($request->isXmlHttpRequest()) {
+            return;
+        }
+
         // Skip internal pages, like WDT and Profiler
         if (str_starts_with($request->getPathInfo(), '/_')) {
             return;
