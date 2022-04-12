@@ -6,9 +6,18 @@ use Twig\Extension\RuntimeExtensionInterface;
 
 class AppRuntime implements RuntimeExtensionInterface
 {
+    private $censoredChars = [
+        '@',
+        '#',
+        '$',
+        '%',
+        '&',
+        '*',
+    ];
+
     public function censor(string $text): string
     {
-        $censoredText = preg_replace_callback('@\<span data="censorship"\>(.*?)\</span\>@', static function ($matches) {
+        $censoredText = preg_replace_callback('@\<span data="censorship"\>(.*?)\</span\>@', function ($matches) {
             $censored = '';
 
             $length = mb_strlen($matches[1]);
@@ -17,7 +26,7 @@ class AppRuntime implements RuntimeExtensionInterface
             }
 
             for ($i = 0; $i < $length; $i++) {
-                $censored .= self::generateRandomCensoredChar();
+                $censored .= $this->generateRandomCensoredChar();
             }
 
             return $censored;
@@ -26,19 +35,18 @@ class AppRuntime implements RuntimeExtensionInterface
         return $censoredText;
     }
 
-    private static function generateRandomCensoredChar(): string
+    private function generateRandomCensoredChar(): string
     {
-        $chars = [
-            '@',
-            '#',
-            '$',
-            '%',
-            '&',
-            '*',
-        ];
+        $randomIndex = array_rand($this->censoredChars);
 
-        $randomIndex = array_rand($chars);
+        return $this->censoredChars[$randomIndex];
+    }
 
-        return $chars[$randomIndex];
+    /**
+     * @internal It's supposed to be used in tests only
+     */
+    public function setCensoredChars(array $censoredChars)
+    {
+        $this->censoredChars = $censoredChars;
     }
 }
