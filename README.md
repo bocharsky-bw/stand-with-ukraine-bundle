@@ -85,3 +85,5 @@ stand_with_ukraine:
         censorship: true # Defaults to "true"
         polite: true
 ```
+
+That's it, thanks for using or sharing it! And issues or PRs are always welcome. 

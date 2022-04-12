@@ -64,11 +64,11 @@ class BannerSubscriber implements EventSubscriberInterface
         $position = 'top';
         switch ($position) {
             case 'top':
-                $content = preg_replace('@\<body.*?\>@i', '$0'.PHP_EOL.$bannerHtml, $content, 1);
+                $content = preg_replace('@\<body.*?\>@i', '$0'.$bannerHtml, $content, 1);
 
                 break;
             case 'bottom':
-                $content = str_ireplace('</body>', $bannerHtml.PHP_EOL.'</body>', $content);
+                $content = str_ireplace('</body>', $bannerHtml.'</body>', $content);
 
                 break;
         }

@@ -1,7 +1,8 @@
 <?php
 
-namespace BW\StandWithUkraineBundle\Twig;
+namespace BW\StandWithUkraineBundle\Tests\Twig;
 
+use BW\StandWithUkraineBundle\Twig\AppRuntime;
 use PHPUnit\Framework\TestCase;
 
 class AppRuntimeTest extends TestCase
