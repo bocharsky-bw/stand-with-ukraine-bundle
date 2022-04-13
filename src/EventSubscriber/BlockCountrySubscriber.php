@@ -6,22 +6,22 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
-use Symfony\Contracts\Translation\TranslatorInterface;
 use Twig\Environment;
 
+/**
+ * @TODO Rename to CountrySubscriber
+ */
 class BlockCountrySubscriber implements EventSubscriberInterface
 {
     private const COUNTRY_CODE_RU = 'RU';
 
     private BannerSubscriber $bannerSubscriber;
     private Environment $twig;
-    private TranslatorInterface $translator;
 
-    public function __construct(BannerSubscriber $bannerSubscriber, Environment $twig, TranslatorInterface $translator)
+    public function __construct(BannerSubscriber $bannerSubscriber, Environment $twig)
     {
         $this->bannerSubscriber = $bannerSubscriber;
         $this->twig = $twig;
-        $this->translator = $translator;
     }
 
     /**
