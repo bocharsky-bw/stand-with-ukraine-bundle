@@ -6,7 +6,6 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
-use Symfony\Contracts\Translation\TranslatorInterface;
 use Twig\Environment;
 
 class AcceptLanguageSubscriber implements EventSubscriberInterface
@@ -15,13 +14,11 @@ class AcceptLanguageSubscriber implements EventSubscriberInterface
 
     private BannerSubscriber $bannerSubscriber;
     private Environment $twig;
-    private TranslatorInterface $translator;
 
-    public function __construct(BannerSubscriber $bannerSubscriber, Environment $twig, TranslatorInterface $translator)
+    public function __construct(BannerSubscriber $bannerSubscriber, Environment $twig)
     {
         $this->bannerSubscriber = $bannerSubscriber;
         $this->twig = $twig;
-        $this->translator = $translator;
     }
 
     /**
@@ -44,12 +41,10 @@ class AcceptLanguageSubscriber implements EventSubscriberInterface
         }
 
         $browser = $this->determineBrowser($request);
+        // TODO Rename page to access-denied.html.twig
         $content = $this->twig->render('@StandWithUkraine/page.html.twig', [
             'browser' => $browser,
             'messageAsLink' => true,
-            'applyCensorship' => function (string $text) {
-                dd($text);
-            }
         ]);
         $response = new Response($content, Response::HTTP_NOT_ACCEPTABLE);
         $event->setResponse($response);
@@ -68,10 +63,12 @@ class AcceptLanguageSubscriber implements EventSubscriberInterface
     private function isPreferredLanguageForbidden(Request $request): bool
     {
         $preferredLanguage = $request->getPreferredLanguage();
-
         $overwrittenPreferredLang = $request->query->get('swu_preferred_lang', false);
         if ($overwrittenPreferredLang) {
             $preferredLanguage = $overwrittenPreferredLang;
+        }
+        if (!$preferredLanguage) {
+            return false;
         }
 
         if (1 !== preg_match('/'.self::PREFERRED_LANG_RU.'/i', $preferredLanguage)) {
@@ -84,6 +81,9 @@ class AcceptLanguageSubscriber implements EventSubscriberInterface
     private function determineBrowser(Request $request): ?string
     {
         $userAgent = $request->headers->get('user-agent');
+        if (!$userAgent) {
+            return null;
+        }
 
         switch (true) {
             case preg_match('/Chrome/i', $userAgent):
