@@ -8,10 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Twig\Environment;
 
-/**
- * @TODO Rename to CountrySubscriber
- */
-class BlockCountrySubscriber implements EventSubscriberInterface
+class CountrySubscriber implements EventSubscriberInterface
 {
     private const COUNTRY_CODE_RU = 'RU';
 

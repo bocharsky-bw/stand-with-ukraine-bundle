@@ -4,7 +4,7 @@ namespace BW\StandWithUkraineBundle\Tests\EventSubscriber;
 
 use BW\StandWithUkraineBundle\EventSubscriber\AcceptLanguageSubscriber;
 use BW\StandWithUkraineBundle\EventSubscriber\BannerSubscriber;
-use BW\StandWithUkraineBundle\EventSubscriber\BlockCountrySubscriber;
+use BW\StandWithUkraineBundle\EventSubscriber\CountrySubscriber;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\InputBag;
@@ -17,7 +17,7 @@ use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Component\HttpKernel\KernelInterface;
 use Twig\Environment;
 
-class BlockCountrySubscriberTest extends TestCase
+class CountrySubscriberTest extends TestCase
 {
     private const PUBLIC_DNS_GOOGLE = '8.8.8.8';
     private const PUBLIC_DNS_YANDEX = '77.88.8.8';
@@ -72,12 +72,12 @@ class BlockCountrySubscriberTest extends TestCase
         self::assertNull($event->getResponse());
     }
 
-    private function createSubscriber(): BlockCountrySubscriber
+    private function createSubscriber(): CountrySubscriber
     {
         $this->bannerSubsciberMock = $this->createMock(BannerSubscriber::class);
         $this->twigMock = $this->createMock(Environment::class);
 
-        return new BlockCountrySubscriber($this->bannerSubsciberMock, $this->twigMock);
+        return new CountrySubscriber($this->bannerSubsciberMock, $this->twigMock);
     }
 
     private function createRequestEvent(int $requestType = HttpKernelInterface::MAIN_REQUEST): RequestEvent

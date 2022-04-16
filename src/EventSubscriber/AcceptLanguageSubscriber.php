@@ -55,7 +55,7 @@ class AcceptLanguageSubscriber implements EventSubscriberInterface
     public static function getSubscribedEvents(): array
     {
         return [
-            // priority should be lower than for BlockCountrySubscriber
+            // priority should be lower than for CountrySubscriber
             RequestEvent::class => ['onRequestEvent', 13],
         ];
     }
