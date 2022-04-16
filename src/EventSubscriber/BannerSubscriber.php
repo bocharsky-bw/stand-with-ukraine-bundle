@@ -14,10 +14,14 @@ class BannerSubscriber implements EventSubscriberInterface
     private bool $isDisabled = false;
 
     private Environment $twig;
+    private ?string $targetUrl = null;
+    private ?string $brandName = null;
 
-    public function __construct(Environment $twig)
+    public function __construct(Environment $twig, ?string $targetUrl, ?string $brandName)
     {
         $this->twig = $twig;
+        $this->targetUrl = $targetUrl;
+        $this->brandName = $brandName;
     }
 
     /**
@@ -56,9 +60,9 @@ class BannerSubscriber implements EventSubscriberInterface
         }
 
         $bannerHtml = $this->twig->render('@StandWithUkraine/banner.html.twig', [
-            'brandName' => 'Symfony Demo',
             'httpHost' => $request->getHttpHost(),
-            'targetUrl' => 'https://symfony.com/blog/symfony-stands-with-ukraine',
+            'targetUrl' => $this->targetUrl,
+            'brandName' => $this->brandName,
         ]);
 
         $position = 'top';

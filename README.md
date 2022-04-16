@@ -74,10 +74,9 @@ as well, use `swu_preferred_lang` query parameter, e.g: https://127.0.0.1:8000/?
 stand_with_ukraine:
     banner:
         enabled: true
-        # TODO Idea to add left/right positions and render small banner there
-        position: top # Possible options: "top" ro "bottom". Set to "top" by default  
-        target_url: /stand-with-ukraine # Wrap the banner with a link to the given URL
-        brand_name: Symfony Demo # The current HTTP host by default
+        position: top  
+        target_url: /stand-with-ukraine
+        brand_name: Symfony Demo
     access:
         block_language: true
         block_country: true
