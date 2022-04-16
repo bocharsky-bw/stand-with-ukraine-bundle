@@ -42,7 +42,7 @@ class CountrySubscriber implements EventSubscriberInterface
             return;
         }
 
-        $content = $this->twig->render('@StandWithUkraine/page.html.twig', [
+        $content = $this->twig->render('@StandWithUkraine/ban-country.html.twig', [
             'useLinks' => $this->useLinks,
         ]);
         $response = new Response($content, Response::HTTP_FORBIDDEN);

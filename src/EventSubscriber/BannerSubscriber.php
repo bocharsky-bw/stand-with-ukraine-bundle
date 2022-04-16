@@ -59,7 +59,7 @@ class BannerSubscriber implements EventSubscriberInterface
             return;
         }
 
-        $bannerHtml = $this->twig->render('@StandWithUkraine/banner.html.twig', [
+        $bannerHtml = $this->twig->render('@StandWithUkraine/_banner.html.twig', [
             'httpHost' => $request->getHttpHost(),
             'targetUrl' => $this->targetUrl,
             'brandName' => $this->brandName,

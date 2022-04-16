@@ -44,7 +44,7 @@ class AcceptLanguageSubscriber implements EventSubscriberInterface
 
         $browser = $this->determineBrowser($request);
         // TODO Rename page to access-denied.html.twig
-        $content = $this->twig->render('@StandWithUkraine/page.html.twig', [
+        $content = $this->twig->render('@StandWithUkraine/ban-language.html.twig', [
             'browser' => $browser,
             'useLinks' => $this->useLinks,
         ]);
