@@ -12,11 +12,11 @@ class CountrySubscriber implements EventSubscriberInterface
 {
     private const COUNTRY_CODE_RU = 'RU';
 
-    private BannerSubscriber $bannerSubscriber;
+    private ?BannerSubscriber $bannerSubscriber = null;
     private Environment $twig;
     private bool $useLinks;
 
-    public function __construct(BannerSubscriber $bannerSubscriber, Environment $twig, bool $useLinks)
+    public function __construct(?BannerSubscriber $bannerSubscriber, Environment $twig, bool $useLinks)
     {
         $this->bannerSubscriber = $bannerSubscriber;
         $this->twig = $twig;
@@ -48,7 +48,9 @@ class CountrySubscriber implements EventSubscriberInterface
         $response = new Response($content, Response::HTTP_FORBIDDEN);
         $event->setResponse($response);
 
-        $this->bannerSubscriber->disable();
+        if ($this->bannerSubscriber) {
+            $this->bannerSubscriber->disable();
+        }
     }
 
     public static function getSubscribedEvents(): array

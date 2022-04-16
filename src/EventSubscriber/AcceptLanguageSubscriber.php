@@ -12,11 +12,11 @@ class AcceptLanguageSubscriber implements EventSubscriberInterface
 {
     private const PREFERRED_LANG_RU = 'ru';
 
-    private BannerSubscriber $bannerSubscriber;
+    private ?BannerSubscriber $bannerSubscriber = null;
     private Environment $twig;
     private bool $useLinks;
 
-    public function __construct(BannerSubscriber $bannerSubscriber, Environment $twig, bool $useLinks)
+    public function __construct(?BannerSubscriber $bannerSubscriber, Environment $twig, bool $useLinks)
     {
         $this->bannerSubscriber = $bannerSubscriber;
         $this->twig = $twig;
@@ -51,7 +51,9 @@ class AcceptLanguageSubscriber implements EventSubscriberInterface
         $response = new Response($content, Response::HTTP_NOT_ACCEPTABLE);
         $event->setResponse($response);
 
-        $this->bannerSubscriber->disable();
+        if ($this->bannerSubscriber) {
+            $this->bannerSubscriber->disable();
+        }
     }
 
     public static function getSubscribedEvents(): array
