@@ -5,12 +5,12 @@ namespace BW\StandWithUkraineBundle\Twig;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
 
-class AppExtension extends AbstractExtension
+class TwigExtension extends AbstractExtension
 {
     public function getFilters()
     {
         return [
-            new TwigFilter('censor', [AppRuntime::class, 'censor']),
+            new TwigFilter('censor', [TwigRuntime::class, 'censor']),
         ];
     }
 }

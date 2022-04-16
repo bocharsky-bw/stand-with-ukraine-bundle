@@ -40,6 +40,21 @@ class Configuration implements ConfigurationInterface
                         ->end()
                     ->end()
                 ->end()
+                ->arrayNode('ban_language')
+                    ->children()
+                        ->booleanNode('enabled')->defaultTrue()->end()
+                        ->booleanNode('use_links')->defaultTrue()->end()
+                        // TODO Possible options
+                        //->booleanNode('censorship')->defaultTrue()->end()
+                        //->booleanNode('polite')->defaultFalse()->end()
+                    ->end()
+                ->end()
+                ->arrayNode('ban_country')
+                    ->children()
+                        ->booleanNode('enabled')->defaultTrue()->end()
+                        ->booleanNode('use_links')->defaultTrue()->end()
+                    ->end()
+                ->end()
             ->end()
         ;
 

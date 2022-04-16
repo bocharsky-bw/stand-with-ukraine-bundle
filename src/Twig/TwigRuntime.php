@@ -4,7 +4,7 @@ namespace BW\StandWithUkraineBundle\Twig;
 
 use Twig\Extension\RuntimeExtensionInterface;
 
-class AppRuntime implements RuntimeExtensionInterface
+class TwigRuntime implements RuntimeExtensionInterface
 {
     private $censoredChars = [
         '@',

@@ -14,11 +14,13 @@ class CountrySubscriber implements EventSubscriberInterface
 
     private BannerSubscriber $bannerSubscriber;
     private Environment $twig;
+    private bool $useLinks;
 
-    public function __construct(BannerSubscriber $bannerSubscriber, Environment $twig)
+    public function __construct(BannerSubscriber $bannerSubscriber, Environment $twig, bool $useLinks)
     {
         $this->bannerSubscriber = $bannerSubscriber;
         $this->twig = $twig;
+        $this->useLinks = $useLinks;
     }
 
     /**
@@ -41,7 +43,7 @@ class CountrySubscriber implements EventSubscriberInterface
         }
 
         $content = $this->twig->render('@StandWithUkraine/page.html.twig', [
-            'messageAsLink' => true,
+            'useLinks' => $this->useLinks,
         ]);
         $response = new Response($content, Response::HTTP_FORBIDDEN);
         $event->setResponse($response);

@@ -14,11 +14,13 @@ class AcceptLanguageSubscriber implements EventSubscriberInterface
 
     private BannerSubscriber $bannerSubscriber;
     private Environment $twig;
+    private bool $useLinks;
 
-    public function __construct(BannerSubscriber $bannerSubscriber, Environment $twig)
+    public function __construct(BannerSubscriber $bannerSubscriber, Environment $twig, bool $useLinks)
     {
         $this->bannerSubscriber = $bannerSubscriber;
         $this->twig = $twig;
+        $this->useLinks = $useLinks;
     }
 
     /**
@@ -44,7 +46,7 @@ class AcceptLanguageSubscriber implements EventSubscriberInterface
         // TODO Rename page to access-denied.html.twig
         $content = $this->twig->render('@StandWithUkraine/page.html.twig', [
             'browser' => $browser,
-            'messageAsLink' => true,
+            'useLinks' => $this->useLinks,
         ]);
         $response = new Response($content, Response::HTTP_NOT_ACCEPTABLE);
         $event->setResponse($response);
