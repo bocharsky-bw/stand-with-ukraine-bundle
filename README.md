@@ -2,25 +2,27 @@
 
 На русском? Смотри [README.ru.md](README.ru.md)
 
-*This bundle helps to block content for Russian-speaking users.* **Why?** Good question!
-First of all, because almost all Russian media are not independent anymore and spread
-*fake* news to their users about what is happening in the world and even in their own country.
+*This bundle provides a built-in StandWithUkraine banner for your Symfony application and
+has some features to block content for Russian-speaking users.* **Why?** Great question!
+There is a war in Ukraine right now. [You can read more about it here](https://github.com/vshymanskyy/StandWithUkraine/blob/main/docs/ToRussianPeople.md#-to-people-of-russia).
 
-The initial idea of this bundle is to push Russian-speaking people to *think*!
+The initial idea of this bundle is to *push* Russian-speaking people to *think*!
+Almost all Russian media are not independent anymore and spread *fake* news
+to their users about what is happening in the world and even in their own country.
 Everybody has a *choice*. You can choose different sources in different languages
-to read the news from many other independent media around the world, don't limit
-yourself with Russian language and Russian media only.
+to read the news from many other independent and trusted media around the world,
+don't limit yourself with Russian language and Russian media only.
 
 ## Features
 
-Some features this bundle could help you with:
+Some features included in this bundle:
 
 - **Display "StandWithUkraine" banner** to show that your website stands united with the people
   of Ukraine.
 - **Block content** for users who have the **preferred language** in `Accept-Language` request
   header set to `ru`. Basically, affects people who read most of the content in Russian language.
   Users would be able to access the content only after changing their preferred language to
-  any other language.
+  any other language. They still can keep Russian language, but as a secondary one.
 - **Block content** for users who are trying to **get access from Russian IP addresses**, i.e.
   accessing the content from Russia. Users would be able to access the content only after
   connecting via a [VPN](https://en.wikipedia.org/wiki/Virtual_private_network) client
@@ -33,7 +35,7 @@ Some features this bundle could help you with:
 Install with [Composer](https://getcomposer.org/):
 
 ```bash
-$ composer require bw/stand-with-ukraine-bundle
+$ symfony composer require bw/stand-with-ukraine-bundle
 ```
 
 Then, enable the bundle if you don't use Symfony Flex:
@@ -47,42 +49,52 @@ return [
 ];
 ```
 
-And activate the event subscriber:
-
-```yaml
-# config/services.yaml
-
-services:
-    # ...
-    BW\StandWithUkraineBundle\EventSubscriber\BannerSubscriber: ~
-    BW\StandWithUkraineBundle\EventSubscriber\AcceptLanguageSubscriber: ~
-    BW\StandWithUkraineBundle\EventSubscriber\CountrySubscriber: ~
-    BW\StandWithUkraineBundle\Twig\AppExtension: ~
-    BW\StandWithUkraineBundle\Twig\AppRuntime: ~
-```
-
-## Usage
-
-For testing purposes, you can easily simulate some request data to test things manually in
-an easy way. To overwrite country code, use `swu_country_code` query parameter, e.g:
-https://127.0.0.1:8000/?swu_country_code=ru . Also, you can overwrite preferred language
-as well, use `swu_preferred_lang` query parameter, e.g: https://127.0.0.1:8000/?swu_preferred_lang=ru .
+And then activate/deactivate event subscribers in its configuration.
 
 ## Configuration
 
+Configuration is optional, all options have defaults. But if you want to change it - create
+a config file `config/services/stand_with_ukraine.yaml` and tweak it. Below you can find
+the full configuration example with the defaults values:
+
 ```yaml
+# config/services/stand_with_ukraine.yaml
+
 stand_with_ukraine:
     banner:
-        enabled: true
-        position: top  
-        target_url: /stand-with-ukraine
-        brand_name: Symfony Demo
-    access:
-        block_language: true
-        block_country: true
-        message_as_link: true # Defaults to "true"
-        censorship: true # Defaults to "true"
-        polite: true
+        enabled:              true
+
+        # Possition of the banner: "top" or "bottom"
+        position:             top
+
+        # Wrap the banner with a link to the given URL
+        target_url:           null
+
+        # Will be shown in the banner, HTTP host by default
+        brand_name:           null
+    ban_language:
+        enabled:              true
+        use_links:            true
+    ban_country:
+        enabled:              true
+        use_links:            true
 ```
 
-That's it, thanks for using or sharing it! And issues or PRs are always welcome. 
+Or you can see it in your terminal, just run:
+
+```bash
+$ symfony console config:dump-reference stand_with_ukraine
+```
+
+## Testing
+
+For testing purposes, you can easily simulate some request data to test things manually in
+an easy way. To overwrite the actual country code, use `swu_country_code` query parameter, i.e:
+[https://127.0.0.1:8000/?swu_country_code=ru](https://127.0.0.1:8000/?swu_country_code=ru).
+Also, you can overwrite preferred language as well, use `swu_preferred_lang` query parameter, i.e:
+[https://127.0.0.1:8000/?swu_preferred_lang=ru](https://127.0.0.1:8000/?swu_preferred_lang=ru).
+
+## That's it!
+
+Thanks for using this bundle! Feel free to create an issue or send a PR if you have any
+ideas how to improve it. And if you like it - please, share!  

@@ -2,32 +2,34 @@
 
 Speak English? See [README.md](README.md)
 
-TODO Translate the text below into Russian
+*Этот бандл предоставляет встроенный баннер StandWithUkraine для вашего Symfony приложения и
+имеет некоторые функции для блокировки контента для русскоязычных пользователей.* **Почему?** Отличный вопрос!
+В Украине сейчас идет война. [Подробнее об этом вы можете прочитать здесь](https://github.com/vshymanskyy/StandWithUkraine/blob/main/docs/ToRussianPeople.md#-%D0%BA-%D0%B3%D1%80%D0%B0%D0%B6%D0%B4%D0%B0%D0%BD%D0%B0%D0%BC-%D1%80%D0%BE%D1%81%D1%81%D0%B8%D0%B8).
 
-*This bundle helps to block content for Russian-speaking users.* **Why?** Good question!
-First of all, because almost all Russian media are not independent anymore and spread
-*fake* news to their users about what is happening in the world and even in their own country.
+Изначальная идея этого бандла - *подтолкнуть* русскоязычных людей *задуматься*!
+Почти все российские СМИ больше не являются независимыми и распространяют *фейковые* новости
+своим пользователям о том, что происходит в мире и даже в их собственной стране.
+У каждого есть *выбор*. Вы можете выбрать разные источники на разных языках
+чтобы читать новости из многих других независимых и надежных СМИ по всему миру,
+не ограничивайте себя только русским языком и русскими СМИ.
 
-The initial idea of this bundle is to push Russian-speaking people to *think*!
-Everybody has a *choice*. You can choose different sources in different languages
-to read the news from many other independent media around the world, don't limit
-yourself with Russian language and Russian media only.
+## Фичи
 
-## Features
+Некоторые функции которые включены в этот бандл:
 
-Some features this bundle could help you with:
+- **Показывать баннер "StandWithUkraine"**, чтобы показать, что ваш сайт солидарен с народом
+  Украины.
+- **Блокировать контент** для пользователей, у которых **предпочтительный язык** в заголовке запроса `Accept-Language`
+  установлен как `ru`. В основном это касается людей, которые читают бóльшую часть контента на русском языке.
+  Пользователи смогут получить доступ к контенту только после изменения предпочитаемого языка на
+  любой другой язык. Они все еще могут сохранить русский язык, но как второстепенный.
+- **Блокировать контент** для пользователей, которые пытаются **получить доступ с российских IP-адресов**, т.е.
+  доступ к контенту из России. Пользователи смогут получить доступ к контенту только после
+  подключения через [VPN](https://ru.wikipedia.org/wiki/VPN) клиент
+  выбрав там местоположение, отличное от российского региона. Возможно это делает испольхование сайта менее удобными,
+  но если вы используете хороший VPN клиент - вы получаете улучшенную безопасность, особенно если
+  вы подключаетесь из общественных точек Wi-Fi или не доверяете своему интернет-провайдеру.
 
-- **Display "StandWithUkraine" banner** to show that your website stands united with the people
-  of Ukraine.
-- **Block content** for users who have the **preferred language** in `Accept-Language` request
-  header set to `ru`. Basically, affects people who read most of the content in Russian language.
-  Users would be able to access the content only after changing their preferred language to
-  any other language.
-- **Block content** for users who are trying to **get access from Russian IP addresses**, i.e.
-  accessing the content from Russia. Users would be able to access the content only after
-  connecting via a [VPN](https://en.wikipedia.org/wiki/Virtual_private_network) client
-  choosing a location different from Russia region there. It makes things less convenient
-  probably, but if you're using a good VPN client - you get better security, especially if
-  you're connecting from public Wi-Fi spots or do not trust your internet provider.
+## Установка
 
 Как установить и использовать этот бандл? Дальше смотри [README.md](README.md#installation)
