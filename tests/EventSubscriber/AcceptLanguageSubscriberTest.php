@@ -123,7 +123,7 @@ class AcceptLanguageSubscriberTest extends TestCase
         $this->bannerSubsciberMock = $this->createMock(BannerSubscriber::class);
         $this->twigMock = $this->createMock(Environment::class);
 
-        return new AcceptLanguageSubscriber($this->bannerSubsciberMock, $this->twigMock);
+        return new AcceptLanguageSubscriber($this->bannerSubsciberMock, $this->twigMock, true);
     }
 
     private function createRequestEvent(int $requestType = HttpKernelInterface::MAIN_REQUEST): RequestEvent

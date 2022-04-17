@@ -77,7 +77,7 @@ class CountrySubscriberTest extends TestCase
         $this->bannerSubsciberMock = $this->createMock(BannerSubscriber::class);
         $this->twigMock = $this->createMock(Environment::class);
 
-        return new CountrySubscriber($this->bannerSubsciberMock, $this->twigMock);
+        return new CountrySubscriber($this->bannerSubsciberMock, $this->twigMock, true);
     }
 
     private function createRequestEvent(int $requestType = HttpKernelInterface::MAIN_REQUEST): RequestEvent

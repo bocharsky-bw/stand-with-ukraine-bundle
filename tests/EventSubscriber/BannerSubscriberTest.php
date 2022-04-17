@@ -66,7 +66,7 @@ class BannerSubscriberTest extends TestCase
     {
         $this->twigMock = $this->createMock(Environment::class);
 
-        return new BannerSubscriber($this->twigMock);
+        return new BannerSubscriber($this->twigMock, '/swu', 'ThisBundle');
     }
 
     private function createResponseEvent(int $requestType = HttpKernelInterface::MAIN_REQUEST): ResponseEvent
