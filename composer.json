@@ -1,6 +1,6 @@
 {
     "name": "bw/stand-with-ukraine-bundle",
-    "description": "Shows StandWithUkraine banner and blocks content for Russian-speaking users",
+    "description": "Provides StandWithUkraine banner and has some features to block content for Russian-speaking users",
     "type": "symfony-bundle",
     "license": "MIT",
     "autoload": {
@@ -16,9 +16,11 @@
         }
     ],
     "require": {
+        "symfony/config": "^5.4|^6.0",
         "symfony/dependency-injection": "^5.4|^6.0",
-        "symfony/framework-bundle": "^5.4|^6.0",
+        "symfony/event-dispatcher": "^5.4|^6.0",
         "symfony/http-foundation": "^5.4|^6.0",
+        "symfony/http-kernel": "^5.4|^6.0",
         "twig/twig": "^3.3"
     },
     "require-dev": {
