@@ -19,7 +19,7 @@ jobs:
                 dependency-versions: ['highest']
                 include:
                     # testing lowest PHP version with lowest dependencies
-                    - php-version: '7.2.5'
+                    - php-version: '7.4'
                       dependency-versions: 'lowest'
                       composer-options: '--prefer-lowest'
         steps:
