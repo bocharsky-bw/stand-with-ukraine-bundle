@@ -13,7 +13,6 @@ jobs:
         strategy:
             fail-fast: false
             matrix:
-                # normal, highest, non-dev installs
                 php-version: ['7.4', '8.0', '8.1']
                 composer-options: ['--prefer-stable']
                 dependency-versions: ['highest']
@@ -21,30 +20,20 @@ jobs:
                     # testing lowest PHP version with lowest dependencies
                     - php-version: '7.4'
                       dependency-versions: 'lowest'
-                      composer-options: '--prefer-lowest'
         steps:
-            - uses: actions/checkout@v3
-
             - name: Install PHP
               uses: shivammathur/setup-php@v2
               with:
                   coverage: none
                   php-version: ${{ matrix.php-version }}
 
-#            - name: Cache Composer packages
-#              id: composer-cache
-#              uses: actions/cache@v3
-#              with:
-#                  path: vendor
-#                  key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
-#                  restore-keys: |
-#                      ${{ runner.os }}-php-
-
+            - name: Checkout repository code
+              uses: actions/checkout@v3
 
             - name: Validate composer.json and composer.lock
               run: composer validate --strict
 
-            - name: Composer dependencies
+            - name: Install Composer dependencies
               uses: ramsey/composer-install@v1
               with:
                   dependency-versions: ${{ matrix.dependency-versions }}
