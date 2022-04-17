@@ -4,7 +4,7 @@
 
 *This bundle provides a built-in StandWithUkraine banner for your Symfony application and
 has some features to block content for Russian-speaking users.* **Why?** Great question!
-There is a war in Ukraine right now. [You can read more about it here](https://github.com/vshymanskyy/StandWithUkraine/blob/main/docs/ToRussianPeople.md#-to-people-of-russia).
+There is a war in Ukraine right now. [You can read more about it here](https://stand-with-ukraine.pp.ua/ToRussianPeople.html#-to-people-of-russia).
 
 The initial idea of this bundle is to *push* Russian-speaking people to *think*!
 Almost all Russian media are not independent anymore and spread *fake* news
