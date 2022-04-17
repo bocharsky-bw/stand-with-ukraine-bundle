@@ -2,6 +2,8 @@
 
 [![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://vshymanskyy.github.io/StandWithUkraine/)
 
+[![CI](https://github.com/bocharsky-bw/StandWithUkraineBundle/actions/workflows/ci.yaml/badge.svg?branch=master)](https://github.com/bocharsky-bw/StandWithUkraineBundle/actions/workflows/ci.yaml)
+
 На русском? Смотри [README.ru.md](README.ru.md)
 
 *This bundle provides a built-in StandWithUkraine banner for your Symfony application and
