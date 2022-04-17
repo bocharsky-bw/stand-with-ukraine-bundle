@@ -2,17 +2,17 @@
 
 namespace BW\StandWithUkraineBundle\Tests\Twig;
 
-use BW\StandWithUkraineBundle\Twig\AppRuntime;
+use BW\StandWithUkraineBundle\Twig\TwigRuntime;
 use PHPUnit\Framework\TestCase;
 
-class AppRuntimeTest extends TestCase
+class TwigRuntimeTest extends TestCase
 {
     /**
      * @dataProvider textProvider
      */
     public function testCensor($text, $expected)
     {
-        $appRuntime = new AppRuntime();
+        $appRuntime = new TwigRuntime();
         // Set only 1 valid char for censorship so we could test easier
         $appRuntime->setCensoredChars(['#']);
         $actual = $appRuntime->censor($text);
