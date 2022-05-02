@@ -95,7 +95,7 @@ class AcceptLanguageSubscriberTest extends TestCase
         return [
             [
                 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.88 Safari/537.36',
-                'Google Chrome',
+                'Chrome',
             ],
             [
                 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:99.0) Gecko/20100101 Firefox/99.0',
