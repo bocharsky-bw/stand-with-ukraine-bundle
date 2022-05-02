@@ -68,9 +68,9 @@
 
                     {% if useLinks %}
                         <div class="text-right">
-                            <a class="link-secondary" href="https://github.com/bocharsky-bw/StandWithUkraineBundle#standwithukrainebundle" target="_blank" rel="nofollow" referrerpolicy="origin-when-cross-origin">Why?</a>
-                            <br>
-                            <a class="link-secondary" href="https://github.com/bocharsky-bw/StandWithUkraineBundle#standwithukrainebundle" target="_blank" rel="nofollow" referrerpolicy="origin-when-cross-origin">How to fix?</a>
+                            {% block swu_links %}
+                                <a class="link-secondary" href="https://github.com/bocharsky-bw/StandWithUkraineBundle#standwithukrainebundle" target="_blank" rel="nofollow" referrerpolicy="origin-when-cross-origin">Why?</a>
+                            {% endblock %}
                         </div>
                     {% endif %}
                 </div>

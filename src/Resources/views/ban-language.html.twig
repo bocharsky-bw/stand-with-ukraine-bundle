@@ -1,3 +1,9 @@
 {% extends '@StandWithUkraine/base.html.twig' %}
 
 {% block title %}Russian language is not accepted{% endblock %}
+
+{% block swu_links %}
+    {{ parent() }}
+    <br>
+    <a class="link-secondary" href="https://github.com/bocharsky-bw/StandWithUkraineBundle/blob/master/docs/preferred-language.md#{{ browser }}" target="_blank" rel="nofollow" referrerpolicy="origin-when-cross-origin">How to fix?</a>
+{% endblock %}
