@@ -67,9 +67,9 @@ class AcceptLanguageSubscriber implements EventSubscriberInterface
     private function isPreferredLanguageForbidden(Request $request): bool
     {
         $preferredLanguage = $request->getPreferredLanguage();
-        $overwrittenPreferredLang = $request->query->get('swu_preferred_lang', false);
-        if ($overwrittenPreferredLang) {
-            $preferredLanguage = $overwrittenPreferredLang;
+        $shouldOverwritePreferredLang = $request->query->getBoolean('swu_overwrite_preferred_lang_ru', false);
+        if ($shouldOverwritePreferredLang) {
+            $preferredLanguage = self::PREFERRED_LANG_RU;
         }
         if (!$preferredLanguage) {
             return false;

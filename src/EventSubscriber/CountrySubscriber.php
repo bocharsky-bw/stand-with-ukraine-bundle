@@ -63,9 +63,9 @@ class CountrySubscriber implements EventSubscriberInterface
 
     private function isRequestFromForbiddenCountry(Request $request): bool
     {
-        $overwrittenCountryCode = $request->query->get('swu_country_code', false);
-        if ($overwrittenCountryCode) {
-            $countryCode = $overwrittenCountryCode;
+        $shouldOverwriteCountryCode = $request->query->getBoolean('swu_overwrite_country_code_ru', false);
+        if ($shouldOverwriteCountryCode) {
+            $countryCode = self::COUNTRY_CODE_RU;
         } else {
             $userIp = $request->server->get('REMOTE_ADDR');
             if (!$userIp) {

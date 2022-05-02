@@ -92,11 +92,13 @@ $ symfony console config:dump-reference stand_with_ukraine
 
 ## Testing
 
-For testing purposes, you can easily simulate some request data to test things manually in
-an easy way. To overwrite the actual country code, use `swu_country_code` query parameter, i.e:
-[https://127.0.0.1:8000/?swu_country_code=ru](https://127.0.0.1:8000/?swu_country_code=ru).
-Also, you can overwrite preferred language as well, use `swu_preferred_lang` query parameter, i.e:
-[https://127.0.0.1:8000/?swu_preferred_lang=ru](https://127.0.0.1:8000/?swu_preferred_lang=ru).
+For testing purposes, you can easily simulate some request data to test things
+manually in an easy way. To overwrite the actual country code with `ru`, use
+`swu_overwrite_country_code_ru` query parameter, i.e:
+[https://127.0.0.1:8000/?swu_overwrite_country_code_ru=1](https://127.0.0.1:8000/?swu_overwrite_country_code_ru=1).
+Also, you can overwrite preferred language with `ru` as well, use
+`swu_overwrite_preferred_lang_ru` query parameter, i.e:
+[https://127.0.0.1:8000/?swu_overwrite_preferred_lang_ru=1](https://127.0.0.1:8000/?swu_overwrite_preferred_lang_ru=1).
 
 ## That's it!
 
