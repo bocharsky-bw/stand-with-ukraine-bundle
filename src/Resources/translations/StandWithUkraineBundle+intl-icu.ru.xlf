@@ -7,8 +7,12 @@
                 <target><![CDATA[{brandName} <span class="hidden-xs">выступает солидарным</span> с народом Украины]]></target>
             </trans-unit>
             <trans-unit id="2">
-                <source>stand_with_ukraine.access_denied</source>
-                <target><![CDATA[Русский военный корабль, иди н<span data="censorship">а</span>хуй! © 🇺🇦]]></target>
+                <source>stand_with_ukraine.access_denied.text</source>
+                <target><![CDATA[Русский военный корабль, иди нах<span data="censorship">у</span>й! © 🇺🇦]]></target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>stand_with_ukraine.access_denied.link</source>
+                <target>https://ru.wikipedia.org/wiki/%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9_%D0%B2%D0%BE%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D1%80%D0%B0%D0%B1%D0%BB%D1%8C,_%D0%B8%D0%B4%D0%B8_%D0%BD%D0%B0_%D1%85%D1%83%D0%B9</target>
             </trans-unit>
         </body>
     </file>

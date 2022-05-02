@@ -57,10 +57,10 @@
             <div class="swu_cell">
                 <div class="display-inline-block">
                     {% if useLinks %}
-                    <a class="link-primary" href="https://en.wikipedia.org/wiki/Russian_warship,_go_fuck_yourself" target="_blank" rel="nofollow" referrerpolicy="origin-when-cross-origin">
+                    <a class="link-primary" href="{{ 'stand_with_ukraine.access_denied.link'|trans({}, 'StandWithUkraineBundle') }}" target="_blank" rel="nofollow" referrerpolicy="origin-when-cross-origin">
                     {% endif %}
                         <span class="text-primary">
-                            {{ 'stand_with_ukraine.access_denied'|trans({}, 'StandWithUkraineBundle')|censor }}
+                            {{ 'stand_with_ukraine.access_denied.text'|trans({}, 'StandWithUkraineBundle')|censor }}
                         </span>
                     {% if useLinks %}
                     </a>

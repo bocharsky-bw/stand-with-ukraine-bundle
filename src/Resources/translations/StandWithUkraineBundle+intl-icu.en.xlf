@@ -7,8 +7,12 @@
                 <target><![CDATA[{brandName} stands <span class="hidden-xs">united</span> with <span class="hidden-xs">the people of</span> Ukraine]]></target>
             </trans-unit>
             <trans-unit id="2">
-                <source>stand_with_ukraine.access_denied</source>
+                <source>stand_with_ukraine.access_denied.text</source>
                 <target><![CDATA[Russian warship, go f<span data="censorship">u</span>ck yourself! © 🇺🇦]]></target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>stand_with_ukraine.access_denied.link</source>
+                <target>https://en.wikipedia.org/wiki/Russian_warship,_go_fuck_yourself</target>
             </trans-unit>
         </body>
     </file>
