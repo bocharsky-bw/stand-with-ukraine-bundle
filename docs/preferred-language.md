@@ -3,11 +3,11 @@
 This is a detailed guide about how to change your preferred language in your
 specific browser. Please, choose your browser and follow the instructions:
 
-- [Google Chrome](#google-chrome)
+- [Google Chrome](#chrome)
 - [Firefox](#firefox)
 - [Safari](#safari)
 
-## Google Chrome
+## Chrome
 
 1. Open "Settings"
 2. Click on "Advanced" item on the left sidebar

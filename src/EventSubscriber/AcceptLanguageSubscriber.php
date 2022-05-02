@@ -91,7 +91,7 @@ class AcceptLanguageSubscriber implements EventSubscriberInterface
 
         switch (true) {
             case preg_match('/Chrome/i', $userAgent):
-                return 'Google Chrome';
+                return 'Chrome';
             case preg_match('/Firefox/i', $userAgent):
                 return 'Firefox';
             case preg_match('/Safari/i', $userAgent):
