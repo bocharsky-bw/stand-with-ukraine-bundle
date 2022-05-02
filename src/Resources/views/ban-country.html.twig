@@ -1,24 +1,3 @@
 {% extends '@StandWithUkraine/base.html.twig' %}
 
 {% block title %}Requests from Russian IP addresses are forbidden{% endblock %}
-
-{% block body %}
-    <div style="display: table; width: 100%; height: 100%;">
-        <div style="display: table-cell; text-align: center; vertical-align: middle; color: red;">
-            <div style="display: inline-block;">
-                {% if useLinks %}
-                    <a href="https://en.wikipedia.org/wiki/Russian_warship,_go_fuck_yourself" style="color: red;" target="_blank" rel="nofollow">
-                {% endif %}
-                    {{ 'stand_with_ukraine.access_denied'|trans({}, 'StandWithUkraineBundle')|censor }}
-                {% if useLinks %}
-                    </a>
-                {% endif %}
-                {% if useLinks %}
-                    <div style="text-align: right;">
-                        <a href="https://github.com/bocharsky-bw/StandWithUkraineBundle#standwithukrainebundle" style="color: black;" target="_blank" rel="nofollow">Why?</a>
-                    </div>
-                {% endif %}
-            </div>
-        </div>
-    </div>
-{% endblock %}

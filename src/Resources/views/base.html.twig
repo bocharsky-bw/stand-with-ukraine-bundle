@@ -1,13 +1,81 @@
 <!doctype html>
-<html lang="{{ app.request.locale }}" style="height: 100%;">
+<html lang="{{ app.request.locale }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %}{% endblock %}</title>
+    {% block stylesheets %}
+        <style>
+            html {
+                height: 100%;
+            }
+            body {
+                height: 100%;
+                margin: 0;
+            }
+            a {
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            .display-inline-block {
+                display: inline-block;
+            }
+            .text-right {
+                text-align: right;
+            }
+            .text-primary {
+                font-size: 20px;
+            }
+            .link-primary, .text-primary {
+                color: red;
+            }
+            .link-secondary {
+                font-size: 15px;
+                color: black;
+            }
+            .swu_table {
+                display: table;
+                width: 100%;
+                height: 100%;
+            }
+            .swu_cell {
+                display: table-cell;
+                text-align: center;
+                vertical-align: middle;
+                color: red;
+            }
+        </style>
+    {% endblock %}
 </head>
-<body style="height: 100%; margin: 0;">
-    {% block body %}{% endblock %}
+<body>
+    {% block body %}
+        <div class="swu_table">
+            <div class="swu_cell">
+                <div class="display-inline-block">
+                    {% if useLinks %}
+                    <a class="link-primary" href="https://en.wikipedia.org/wiki/Russian_warship,_go_fuck_yourself" target="_blank" rel="nofollow" referrerpolicy="origin-when-cross-origin">
+                    {% endif %}
+                        <span class="text-primary">
+                            {{ 'stand_with_ukraine.access_denied'|trans({}, 'StandWithUkraineBundle')|censor }}
+                        </span>
+                    {% if useLinks %}
+                    </a>
+                    {% endif %}
+
+                    {% if useLinks %}
+                        <div class="text-right">
+                            <a class="link-secondary" href="https://github.com/bocharsky-bw/StandWithUkraineBundle#standwithukrainebundle" target="_blank" rel="nofollow" referrerpolicy="origin-when-cross-origin">Why?</a>
+                            <br>
+                            <a class="link-secondary" href="https://github.com/bocharsky-bw/StandWithUkraineBundle#standwithukrainebundle" target="_blank" rel="nofollow" referrerpolicy="origin-when-cross-origin">How to fix?</a>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    {% endblock %}
 </body>
 </html>
