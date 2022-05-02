@@ -96,12 +96,12 @@ For testing purposes, you can easily simulate some request data to test things
 manually in an easy way. To overwrite the actual country code with `ru`, use
 `swu_overwrite_country_code_ru` query parameter, i.e:
 
-[https://127.0.0.1:8000/?swu_overwrite_country_code_ru=1](https://127.0.0.1:8000/?swu_overwrite_country_code_ru=1).
+[https://127.0.0.1:8000/?swu_overwrite_country_code_ru=1](https://127.0.0.1:8000/?swu_overwrite_country_code_ru=1)
 
 Also, you can overwrite preferred language with `ru` as well, use
 `swu_overwrite_preferred_lang_ru` query parameter, i.e:
 
-[https://127.0.0.1:8000/?swu_overwrite_preferred_lang_ru=1](https://127.0.0.1:8000/?swu_overwrite_preferred_lang_ru=1).
+[https://127.0.0.1:8000/?swu_overwrite_preferred_lang_ru=1](https://127.0.0.1:8000/?swu_overwrite_preferred_lang_ru=1)
 
 ## That's it!
 
