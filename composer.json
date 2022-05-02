@@ -1,6 +1,6 @@
 {
     "name": "bw/stand-with-ukraine-bundle",
-    "description": "Provides StandWithUkraine banner and has some features to block content for Russian-speaking users",
+    "description": "Provides StandWithUkraine banner and has some built-in features to block access to your resource for Russian-speaking users",
     "type": "symfony-bundle",
     "license": "MIT",
     "autoload": {

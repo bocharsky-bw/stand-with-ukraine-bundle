@@ -3,7 +3,7 @@
     <file original="file.ext" source-language="en" target-language="ru" datatype="plaintext">
         <body>
             <trans-unit id="1">
-                <source>stand_with_ukraine</source>
+                <source>stand_with_ukraine.banner.text</source>
                 <target><![CDATA[{brandName} <span class="hidden-xs">выступает солидарным</span> с народом Украины]]></target>
             </trans-unit>
             <trans-unit id="2">

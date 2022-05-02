@@ -48,6 +48,7 @@ class StandWithUkraineExtension extends Extension
         }
 
         if ($config['ban_language']['enabled'] || $config['ban_country']['enabled']) {
+            // We need to register a Twig extension to provide custom filters
             $definition = $container->register(TwigExtension::class, TwigExtension::class);
             $definition->addTag('twig.extension');
             $definition = $container->register(TwigRuntime::class, TwigRuntime::class);
