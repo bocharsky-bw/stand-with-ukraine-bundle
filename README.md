@@ -37,6 +37,16 @@ Some features included in this bundle:
   you're connecting from public Wi-Fi spots or do not trust your internet provider.
   ![Example of access denied page](https://github.com/bocharsky-bw/stand-with-ukraine-bundle/blob/main/docs/images/access-denied.png)
 
+## Demo
+
+Want to see this bundle in action before installing it? Check a little demo:
+
+- https://stand-with-ukraine-bundle.herokuapp.com/
+- https://stand-with-ukraine-bundle.herokuapp.com/en/?swu_overwrite_country_code_ru=yes
+- https://stand-with-ukraine-bundle.herokuapp.com/en/?swu_overwrite_preferred_lang_ru=yes
+
+Thanks to [Heroku](https://heroku.com/) for hosting it ❤️
+
 ## Installation
 
 Install with [Composer](https://getcomposer.org/):
