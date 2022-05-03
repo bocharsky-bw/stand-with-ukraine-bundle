@@ -23,16 +23,19 @@ Some features included in this bundle:
 
 - **Display "StandWithUkraine" banner** to show that your website stands united with the people
   of Ukraine.
+  ![Example of StandWithUkraine banner](https://github.com/bocharsky-bw/StandWithUkraineBundle/blob/master/docs/images/banner.png)
 - **Block content** for users who have the **preferred language** in `Accept-Language` request
   header set to `ru`. Basically, affects people who read most of the content in Russian language.
   Users would be able to access the content only after changing their preferred language to
   any other language. They still can keep Russian language, but as a secondary one.
+  ![Example of access denied page](https://github.com/bocharsky-bw/StandWithUkraineBundle/blob/master/docs/images/access-denied.png)
 - **Block content** for users who are trying to **get access from Russian IP addresses**, i.e.
   accessing the content from Russia. Users would be able to access the content only after
   connecting via a [VPN](https://en.wikipedia.org/wiki/Virtual_private_network) client
   choosing a location different from Russia region there. It makes things less convenient
   probably, but if you're using a good VPN client - you get better security, especially if
   you're connecting from public Wi-Fi spots or do not trust your internet provider.
+  The access denied page looks the same.
 
 ## Installation
 
@@ -96,12 +99,12 @@ For testing purposes, you can easily simulate some request data to test things
 manually in an easy way. To overwrite the actual country code with `ru`, use
 `swu_overwrite_country_code_ru` query parameter, i.e:
 
-[https://127.0.0.1:8000/?swu_overwrite_country_code_ru=1](https://127.0.0.1:8000/?swu_overwrite_country_code_ru=1)
+[https://127.0.0.1:8000/?swu_overwrite_country_code_ru=yes](https://127.0.0.1:8000/?swu_overwrite_country_code_ru=yes)
 
 Also, you can overwrite preferred language with `ru` as well, use
 `swu_overwrite_preferred_lang_ru` query parameter, i.e:
 
-[https://127.0.0.1:8000/?swu_overwrite_preferred_lang_ru=1](https://127.0.0.1:8000/?swu_overwrite_preferred_lang_ru=1)
+[https://127.0.0.1:8000/?swu_overwrite_preferred_lang_ru=yes](https://127.0.0.1:8000/?swu_overwrite_preferred_lang_ru=yes)
 
 ## That's it!
 
