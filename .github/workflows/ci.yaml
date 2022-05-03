@@ -15,10 +15,6 @@ jobs:
             matrix:
                 php-version: ['7.4', '8.0', '8.1']
                 dependency-versions: ['highest']
-                include:
-                    # testing lowest PHP version with lowest dependencies
-                    - php-version: '7.4'
-                      dependency-versions: 'lowest'
         steps:
             - name: Install PHP
               uses: shivammathur/setup-php@v2
