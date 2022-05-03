@@ -30,7 +30,7 @@
         "symfony/phpunit-bridge": "^5.4|^6.0"
     },
     "conflict": {
-        "symfony/polyfill-php80": "<=1.23.0"
+        "symfony/polyfill-php80-": "<=1.23.0"
     },
     "config": {
         "sort-packages": true
