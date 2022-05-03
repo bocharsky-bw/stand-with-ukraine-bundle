@@ -25,6 +25,7 @@ class StandWithUkraineExtension extends Extension
             $definition = $container->register(BannerSubscriber::class, BannerSubscriber::class);
             // TODO Reference could be replaced with TypedReference?
             $definition->setArgument('$twig', new Reference(Environment::class));
+            $definition->setArgument('$position', $config['banner']['position']);
             $definition->setArgument('$targetUrl', $config['banner']['target_url']);
             $definition->setArgument('$brandName', $config['banner']['brand_name']);
             $definition->addTag('kernel.event_subscriber');

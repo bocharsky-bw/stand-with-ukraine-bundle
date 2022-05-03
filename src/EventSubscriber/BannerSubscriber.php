@@ -14,12 +14,14 @@ class BannerSubscriber implements EventSubscriberInterface
     private bool $isDisabled = false;
 
     private Environment $twig;
+    private string $position;
     private ?string $targetUrl = null;
     private ?string $brandName = null;
 
-    public function __construct(Environment $twig, ?string $targetUrl, ?string $brandName)
+    public function __construct(Environment $twig, string $position, ?string $targetUrl, ?string $brandName)
     {
         $this->twig = $twig;
+        $this->position = $position;
         $this->targetUrl = $targetUrl;
         $this->brandName = $brandName;
     }
@@ -65,8 +67,7 @@ class BannerSubscriber implements EventSubscriberInterface
             'brandName' => $this->brandName,
         ]);
 
-        $position = 'top';
-        switch ($position) {
+        switch ($this->position) {
             case 'top':
                 $content = preg_replace('@\<body.*?\>@i', '$0'.$bannerHtml, $content, 1);
 
