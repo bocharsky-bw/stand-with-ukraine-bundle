@@ -2,7 +2,7 @@
 
 [![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://vshymanskyy.github.io/StandWithUkraine/)
 
-[![CI](https://github.com/bocharsky-bw/stand-with-ukraine-bundle/actions/workflows/ci.yaml/badge.svg?branch=master)](https://github.com/bocharsky-bw/stand-with-ukraine-bundle/actions/workflows/ci.yaml)
+[![CI](https://github.com/bocharsky-bw/stand-with-ukraine-bundle/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/bocharsky-bw/stand-with-ukraine-bundle/actions/workflows/ci.yaml)
 
 Speak English? See [README.md](README.md)
 
@@ -23,19 +23,19 @@ Speak English? See [README.md](README.md)
 
 - **Показывать баннер "StandWithUkraine"**, чтобы показать, что ваш сайт солидарен с народом
   Украины.
-  ![Пример StandWithUkraine банера](https://github.com/bocharsky-bw/stand-with-ukraine-bundle/blob/master/docs/images/banner.png)
+  ![Пример StandWithUkraine банера](https://github.com/bocharsky-bw/stand-with-ukraine-bundle/blob/main/docs/images/banner.png)
 - **Блокировать контент** для пользователей, у которых **предпочтительный язык** в заголовке запроса `Accept-Language`
   установлен как `ru`. В основном это касается людей, которые читают бóльшую часть контента на русском языке.
   Пользователи смогут получить доступ к контенту только после изменения предпочитаемого языка на
   любой другой язык. Они все еще могут сохранить русский язык, но как второстепенный.
-  ![Пример страницы с отказом в доступе](https://github.com/bocharsky-bw/stand-with-ukraine-bundle/blob/master/docs/images/access-denied.png)
+  ![Пример страницы с отказом в доступе](https://github.com/bocharsky-bw/stand-with-ukraine-bundle/blob/main/docs/images/access-denied.png)
 - **Блокировать контент** для пользователей, которые пытаются **получить доступ с российских IP-адресов**, т.е.
   доступ к контенту из России. Пользователи смогут получить доступ к контенту только после
   подключения через [VPN](https://ru.wikipedia.org/wiki/VPN) клиент
   выбрав там местоположение, отличное от российского региона. Возможно это делает испольхование сайта менее удобными,
   но если вы используете хороший VPN клиент - вы получаете улучшенную безопасность, особенно если
   вы подключаетесь из общественных точек Wi-Fi или не доверяете своему интернет-провайдеру.
-  ![Пример страницы с отказом в доступе](https://github.com/bocharsky-bw/stand-with-ukraine-bundle/blob/master/docs/images/access-denied.png)
+  ![Пример страницы с отказом в доступе](https://github.com/bocharsky-bw/stand-with-ukraine-bundle/blob/main/docs/images/access-denied.png)
 
 ## Установка
 
