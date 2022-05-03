@@ -35,7 +35,7 @@ Some features included in this bundle:
   choosing a location different from Russia region there. It makes things less convenient
   probably, but if you're using a good VPN client - you get better security, especially if
   you're connecting from public Wi-Fi spots or do not trust your internet provider.
-  The access denied page looks the same.
+  ![Example of access denied page](https://github.com/bocharsky-bw/StandWithUkraineBundle/blob/master/docs/images/access-denied.png)
 
 ## Installation
 
