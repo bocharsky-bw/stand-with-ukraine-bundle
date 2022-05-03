@@ -2,7 +2,7 @@
 
 [![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://vshymanskyy.github.io/StandWithUkraine/)
 
-[![CI](https://github.com/bocharsky-bw/StandWithUkraineBundle/actions/workflows/ci.yaml/badge.svg?branch=master)](https://github.com/bocharsky-bw/StandWithUkraineBundle/actions/workflows/ci.yaml)
+[![CI](https://github.com/bocharsky-bw/stand-with-ukraine-bundle/actions/workflows/ci.yaml/badge.svg?branch=master)](https://github.com/bocharsky-bw/stand-with-ukraine-bundle/actions/workflows/ci.yaml)
 
 На русском? Смотри [README.ru.md](README.ru.md)
 
@@ -23,19 +23,19 @@ Some features included in this bundle:
 
 - **Display "StandWithUkraine" banner** to show that your website stands united with the people
   of Ukraine.
-  ![Example of StandWithUkraine banner](https://github.com/bocharsky-bw/StandWithUkraineBundle/blob/master/docs/images/banner.png)
+  ![Example of StandWithUkraine banner](https://github.com/bocharsky-bw/stand-with-ukraine-bundle/blob/master/docs/images/banner.png)
 - **Block content** for users who have the **preferred language** in `Accept-Language` request
   header set to `ru`. Basically, affects people who read most of the content in Russian language.
   Users would be able to access the content only after changing their preferred language to
   any other language. They still can keep Russian language, but as a secondary one.
-  ![Example of access denied page](https://github.com/bocharsky-bw/StandWithUkraineBundle/blob/master/docs/images/access-denied.png)
+  ![Example of access denied page](https://github.com/bocharsky-bw/stand-with-ukraine-bundle/blob/master/docs/images/access-denied.png)
 - **Block content** for users who are trying to **get access from Russian IP addresses**, i.e.
   accessing the content from Russia. Users would be able to access the content only after
   connecting via a [VPN](https://en.wikipedia.org/wiki/Virtual_private_network) client
   choosing a location different from Russia region there. It makes things less convenient
   probably, but if you're using a good VPN client - you get better security, especially if
   you're connecting from public Wi-Fi spots or do not trust your internet provider.
-  ![Example of access denied page](https://github.com/bocharsky-bw/StandWithUkraineBundle/blob/master/docs/images/access-denied.png)
+  ![Example of access denied page](https://github.com/bocharsky-bw/stand-with-ukraine-bundle/blob/master/docs/images/access-denied.png)
 
 ## Installation
 
