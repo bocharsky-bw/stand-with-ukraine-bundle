@@ -16,6 +16,7 @@ class Configuration implements ConfigurationInterface
         $root
             ->children()
                 ->arrayNode('banner')
+                    ->addDefaultsIfNotSet()
                     ->children()
                         ->booleanNode('enabled')->defaultTrue()->end()
                         # TODO Idea to add left/right positions and render a small banner on sides
@@ -41,6 +42,7 @@ class Configuration implements ConfigurationInterface
                     ->end()
                 ->end()
                 ->arrayNode('ban_language')
+                    ->addDefaultsIfNotSet()
                     ->children()
                         ->booleanNode('enabled')->defaultTrue()->end()
                         ->booleanNode('use_links')->defaultTrue()->end()
@@ -50,6 +52,7 @@ class Configuration implements ConfigurationInterface
                     ->end()
                 ->end()
                 ->arrayNode('ban_country')
+                    ->addDefaultsIfNotSet()
                     ->children()
                         ->booleanNode('enabled')->defaultTrue()->end()
                         ->booleanNode('use_links')->defaultTrue()->end()
