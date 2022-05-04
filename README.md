@@ -75,7 +75,7 @@ a config file `config/services/stand_with_ukraine.yaml` and tweak it. Below you 
 the full configuration example with the defaults values:
 
 ```yaml
-# config/services/stand_with_ukraine.yaml
+# config/packages/stand_with_ukraine.yaml
 
 stand_with_ukraine:
     banner:
@@ -105,8 +105,8 @@ $ symfony console config:dump-reference stand_with_ukraine
 
 ## Testing
 
-For testing purposes, you can easily simulate some request data to test things
-manually in an easy way. To overwrite the actual country code with `ru`, use
+For testing purposes, you can easily simulate bad requests to test things manually
+on your website in an easy way. To overwrite the actual country code with `ru`, use
 `swu_overwrite_country_code_ru` query parameter, i.e:
 
 [https://127.0.0.1:8000/?swu_overwrite_country_code_ru=yes](https://127.0.0.1:8000/?swu_overwrite_country_code_ru=yes)
@@ -115,6 +115,9 @@ Also, you can overwrite preferred language with `ru` as well, use
 `swu_overwrite_preferred_lang_ru` query parameter, i.e:
 
 [https://127.0.0.1:8000/?swu_overwrite_preferred_lang_ru=yes](https://127.0.0.1:8000/?swu_overwrite_preferred_lang_ru=yes)
+
+The system will thinks that you're sending requests from a Russian IP address or
+with Russian preferred language correspondingly and behave accordingly your configuration.
 
 ## That's it!
 
