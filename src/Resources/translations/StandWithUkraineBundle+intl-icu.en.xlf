@@ -14,6 +14,14 @@
                 <source>stand_with_ukraine.access_denied.link</source>
                 <target>https://en.wikipedia.org/wiki/Russian_warship,_go_fuck_yourself</target>
             </trans-unit>
+            <trans-unit id="4">
+                <source>stand_with_ukraine.access_denied.why</source>
+                <target>Why?</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>stand_with_ukraine.access_denied.fix</source>
+                <target>How to fix?</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
