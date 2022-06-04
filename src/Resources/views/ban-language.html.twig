@@ -5,5 +5,5 @@
 {% block swu_links %}
     {{ parent() }}
     <br>
-    <a class="link-secondary" href="https://github.com/bocharsky-bw/stand-with-ukraine-bundle/blob/master/docs/preferred-language.md#{{ browserName }}" title="See instructions about how to fix this for your {{ browserName }} browser" target="_blank" rel="nofollow" referrerpolicy="origin-when-cross-origin">How to fix?</a>
+    <a class="link-secondary" href="https://github.com/bocharsky-bw/stand-with-ukraine-bundle/blob/master/docs/preferred-language.md#{{ browserName }}" title="See instructions about how to fix this for your {{ browserName }} browser" target="_blank" rel="nofollow" referrerpolicy="origin-when-cross-origin">{{ 'stand_with_ukraine.access_denied.fix'|trans({}, 'StandWithUkraineBundle') }}</a>
 {% endblock %}
