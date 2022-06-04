@@ -1,9 +1,8 @@
 name: CI
 on:
     push:
-        branches: [ main ]
-    pull_request:
         branches: [ $default-branch ]
+    pull_request:
 permissions:
     contents: read
 jobs:
