@@ -69,7 +69,7 @@
                     {% if useLinks %}
                         <div class="text-right">
                             {% block swu_links %}
-                                <a class="link-secondary" href="https://github.com/bocharsky-bw/stand-with-ukraine-bundle#standwithukrainebundle" target="_blank" rel="nofollow" referrerpolicy="origin-when-cross-origin">Why?</a>
+                                <a class="link-secondary" href="https://github.com/bocharsky-bw/stand-with-ukraine-bundle#standwithukrainebundle" target="_blank" rel="nofollow" referrerpolicy="origin-when-cross-origin">{{ 'stand_with_ukraine.access_denied.why'|trans({}, 'StandWithUkraineBundle') }}</a>
                             {% endblock %}
                         </div>
                     {% endif %}
