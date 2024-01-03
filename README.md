@@ -37,16 +37,6 @@ Some features included in this bundle:
   you're connecting from public Wi-Fi spots or do not trust your internet provider.
   ![Example of access denied page](https://github.com/bocharsky-bw/stand-with-ukraine-bundle/blob/main/docs/images/access-denied.png)
 
-## Demo
-
-Want to see this bundle in action before installing it? Check a little demo:
-
-- https://stand-with-ukraine-bundle.herokuapp.com/
-- https://stand-with-ukraine-bundle.herokuapp.com/en/?swu_overwrite_country_code_ru=yes
-- https://stand-with-ukraine-bundle.herokuapp.com/en/?swu_overwrite_preferred_lang_ru=yes
-
-Thanks to [Heroku](https://heroku.com/) for hosting it ❤️
-
 ## Installation
 
 Install with [Composer](https://getcomposer.org/):
@@ -72,7 +62,7 @@ And then activate/deactivate event subscribers in its configuration.
 
 Configuration is optional, all options have defaults. But if you want to change it - create
 a config file `config/services/stand_with_ukraine.yaml` and tweak it. Below you can find
-the full configuration example with the defaults values:
+the full configuration example with the default values:
 
 ```yaml
 # config/packages/stand_with_ukraine.yaml
